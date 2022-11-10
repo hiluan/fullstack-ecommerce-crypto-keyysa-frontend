@@ -29,15 +29,15 @@ export default function Nav() {
   return (
     <SNav>
       <SLogo>
-        <p>keyysa</p>
+        <h3>keyysa</h3>
         {/* <img src="/keyysa-logo.png" alt="" /> */}
       </SLogo>
       <SMenu>
         <li>home</li>
         <li>about</li>
-        <li>
+        {/* <li>
           <button>dark</button>
-        </li>
+        </li> */}
       </SMenu>
     </SNav>
     // <SNav>
@@ -135,7 +135,7 @@ const SLogo = styled.div`
     transform: scale(1.1);
   } */
 
-  p {
+  h3 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--dtextfirst);
@@ -153,7 +153,7 @@ const SMenu = styled.ul`
   align-items: center;
   color: white;
   list-style: none;
-  font-size: 2rem;
+  font-size: 2em;
   cursor: pointer;
   transition: all ease 0.3s;
 

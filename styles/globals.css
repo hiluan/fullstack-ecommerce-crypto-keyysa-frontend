@@ -6,6 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* border: 1px solid red; */
 }
 
 html,
@@ -23,10 +24,10 @@ body {
   --dtextlast: rgba(255, 255, 255, 0.4);
 
   /* * Text - Light Mode * */
-  --dtextfirst: rgba(0, 0, 0, 1);
-  --dtextsecond: rgba(0, 0, 0, 0.8);
-  --dtextthird: rgba(0, 0, 0, 0.6);
-  --dtextlast: rgba(0, 0, 0, 0.4);
+  --ltextfirst: rgba(0, 0, 0, 1);
+  --ltextsecond: rgba(0, 0, 0, 0.8);
+  --ltextthird: rgba(0, 0, 0, 0.6);
+  --ltextlast: rgba(0, 0, 0, 0.4);
 
   /* * Monochromatic * */
   --boxshadow01: 0 0 30px rgba(0, 0, 0, 0.1);

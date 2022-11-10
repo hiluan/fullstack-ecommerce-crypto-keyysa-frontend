@@ -2,6 +2,7 @@ import Head from "next/head";
 import Intro from "../components/Intro";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
+import Products from "../components/Products";
 
 export default function Home() {
   // fetch products from strapi
@@ -23,7 +24,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Intro />
+        <Intro products={products} />
+        <Products products={products} />
 
         {/* <IntroTop products={products} />
         <IntroBeerCards products={products} />

@@ -16,7 +16,14 @@ export default function Intro({ products }) {
   return (
     <SIntro ref={ref} id="sIntro">
       <STopText id="STopText" className="absolute">
-        <h1>cold, smooth & tasty.</h1>
+        <h1>We go public </h1>
+        <h1>
+          <span>for</span> you <span>to</span> stay private.
+        </h1>
+        <p>
+          Enjoy shopping with complete anonymity. No tracking. No data
+          harvesting.
+        </p>
       </STopText>
       {/*
       <SCards id="SCards">
@@ -40,9 +47,7 @@ export default function Intro({ products }) {
 const SIntro = styled.div`
   position: relative;
   overflow: hidden;
-  background: black;
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,42 +59,17 @@ const SIntro = styled.div`
 // `;
 const STopText = styled.div`
   z-index: 10;
-
-  width: 70%;
   display: flex;
-  justify-content: flex-end;
-
-  div {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
-  ul {
-    font-size: 2rem;
-    font-family: "Roboto Slab", serif;
-    opacity: 0.9;
-    list-style-type: none;
-    line-height: 1.6;
-  }
-
-  #STopText-price {
-    text-align: right;
-  }
-
-  li {
-    margin: 0 2rem;
-  }
+  flex-direction: column;
+  width: 45%;
+  height: 50vh;
 
   h1 {
-    font-family: "League Spartan", sans-serif;
-    font-weight: 900;
-    font-size: 12.5rem;
-    max-width: 40rem;
-    line-height: 0.85;
-    letter-spacing: -5px;
+    font-weight: 700;
     color: white;
-    margin-bottom: -2rem;
+  }
+  span {
+    font-size: 3rem;
   }
 `;
 const SGradientAni = styled.div`
@@ -99,7 +79,7 @@ const SGradientAni = styled.div`
   min-width: 100%;
   height: 100vh;
   z-index: 2;
-  opacity: 0.9999999;
+  opacity: 0.995;
 
   background-image: linear-gradient(45deg, #000d09, #000000, #100000),
     linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
