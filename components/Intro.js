@@ -81,7 +81,56 @@ const SGradientAni = styled.div`
   z-index: 2;
   opacity: 0.995;
 
-  background-image: linear-gradient(45deg, #000d09, #000000, #100000),
+  background: linear-gradient(
+    45deg,
+    #000d09,
+    #000000,
+    #100000,
+    #1c0306,
+    #02051c,
+    #1c0902,
+    #031208
+  );
+  background-size: 200% 300%;
+
+  -webkit-animation: AnimationName 59s ease infinite;
+  -moz-animation: AnimationName 59s ease infinite;
+  animation: AnimationName 59s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 88% 0%;
+    }
+    50% {
+      background-position: 13% 100%;
+    }
+    100% {
+      background-position: 88% 0%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 88% 0%;
+    }
+    50% {
+      background-position: 13% 100%;
+    }
+    100% {
+      background-position: 88% 0%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 88% 0%;
+    }
+    50% {
+      background-position: 13% 100%;
+    }
+    100% {
+      background-position: 88% 0%;
+    }
+  }
+  /* background-image: linear-gradient(45deg, #000d09, #000000, #100000),
     linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   background-size: 100% 100%;
@@ -122,7 +171,7 @@ const SGradientAni = styled.div`
     100% {
       background-position: 0% 99%;
     }
-  }
+  } */
 `;
 
 const Video = styled.video`

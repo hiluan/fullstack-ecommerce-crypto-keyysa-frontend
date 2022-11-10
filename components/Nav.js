@@ -2,9 +2,14 @@ import styled from "styled-components";
 import Link from "next/link";
 // import Cart from "./Cart";
 import { useStateContext } from "../lib/context";
-// import { RiShoppingBagFill } from "react-icons/ri";
-// import { IoIosBeer } from "react-icons/io";
-// import { BsFillQuestionDiamondFill } from "react-icons/bs";
+import {
+  RiHomeSmileLine,
+  RiHomeSmileFill,
+  RiInformationLine,
+  RiInformationFill,
+  RiShoppingBagLine,
+  RiShoppingBagFill,
+} from "react-icons/ri";
 import { useState } from "react";
 import { useRouter } from "next/router";
 // const { motion, AnimatePresence } = require("framer-motion");
@@ -33,8 +38,15 @@ export default function Nav() {
         {/* <img src="/keyysa-logo.png" alt="" /> */}
       </SLogo>
       <SMenu>
-        <li>home</li>
-        <li>about</li>
+        <li>
+          <RiHomeSmileLine />
+        </li>
+        <li>
+          <RiInformationLine />
+        </li>
+        <li>
+          <RiShoppingBagLine />
+        </li>
         {/* <li>
           <button>dark</button>
         </li> */}
@@ -117,20 +129,20 @@ export default function Nav() {
 }
 
 const SNav = styled.div`
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  top: 4vh;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  z-index: 100;
 `;
 
 const SLogo = styled.div`
-  position: fixed;
-  top: 2rem;
-  left: 10%;
-  opacity: 1;
-  transition: all ease 0.3s;
-  filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4));
+  /* filter: drop-shadow(0 0 6px rgb(0 0 0 / 0.4)); */
   cursor: pointer;
-  padding: 1rem 1rem 0.5rem 1rem;
+
   /* &:hover {
     transform: scale(1.1);
   } */
@@ -138,52 +150,36 @@ const SLogo = styled.div`
   h3 {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--dtextfirst);
     font-family: "Aguafina Script", cursive;
+    color: var(--dfirst);
+
     /* font-family: "Qwitcher Grypen", cursive; */
     /* font-family: "Yesteryear", cursive; */
+  }
+
+  h3:hover {
+    color: var(--amazonHL);
+    text-shadow: 0px 0px 30px rgba(0, 0, 255, 0.8);
   }
 `;
 
 const SMenu = styled.ul`
-  position: fixed;
-  top: 3rem;
-  right: 10%;
   display: flex;
-  align-items: center;
-  color: white;
   list-style: none;
-  font-size: 2em;
+  font-size: 3rem;
   cursor: pointer;
-  transition: all ease 0.3s;
 
   li {
+    margin: 0 3rem;
     text-align: center;
-    transition: all ease 0.15s;
-    margin: 0 2rem;
+    color: var(--dthird);
     /* text-shadow: 0 0 3px #fff; */
   }
-  div {
-    display: flex;
-    align-items: center;
-    svg {
-      transition: all ease 0.3s;
-      z-index: 2;
-      &:hover {
-        transform: scale(1.4) translateY(-10%);
-      }
-    }
-  }
-  p {
-    font-weight: 500;
-    transition: all ease 0.3s;
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
 
-  .menu-icon {
-    display: none;
+  li:hover {
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.4);
+    text-shadow: 0px 0px 30px rgba(0, 0, 255, 0.8);
+    color: var(--amazonHL);
   }
   #einkaufskorb {
     margin-left: 1rem;

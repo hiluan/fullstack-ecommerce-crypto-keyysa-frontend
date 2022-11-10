@@ -1,52 +1,53 @@
-// import styled from "styled-components";
-// import toast from "react-hot-toast";
-// import { useStateContext } from "../lib/context";
+import styled from "styled-components";
+import toast from "react-hot-toast";
+import { useStateContext } from "../lib/context";
 
-// const BtnAddToCart = ({ light }) => {
-//   const { qty, onAdd } = useStateContext();
-//   const { title } = light.attributes;
+const BtnAddToCart = ({ product }) => {
+  const { qty, onAdd } = useStateContext();
+  const { title } = product.attributes;
 
-//   // create a toast
-//   const notify = () => {
-//     toast(`${qty} x "${title}" zum Warenkorb hinzugefügt.`, {
-//       icon: "🍺",
-//       duration: 2000,
-//       style: {
-//         fontSize: "1.4rem",
-//         borderRadius: "3px",
-//         background: "#111111",
-//         color: "#fff",
-//         maxWidth: "480px",
-//       },
-//     });
-//   };
+  // create a toast
+  const notify = () => {
+    toast(`${qty} x "${title}" added to cart.`, {
+      icon: "🍺",
+      duration: 2000,
+      style: {
+        fontSize: "1.4rem",
+        borderRadius: "3px",
+        background: "#111111",
+        color: "#fff",
+        maxWidth: "480px",
+      },
+    });
+  };
 
-//   return (
-//     <SAdd
-//       onClick={() => {
-//         notify();
-//         onAdd(light.attributes, qty);
-//       }}
-//     >
-//       In den Warenkorb
-//     </SAdd>
-//   );
-// };
+  return (
+    <SAdd
+      onClick={() => {
+        notify();
+        onAdd(product.attributes, qty);
+      }}
+    >
+      Add to Cart
+    </SAdd>
+  );
+};
 
-// export default BtnAddToCart;
+export default BtnAddToCart;
 
-// const SAdd = styled.button`
-//   cursor: pointer;
-//   background: black;
-//   color: white;
-//   border: solid 2px white;
-//   padding: 0 0.5rem;
-//   z-index: 2;
-//   height: 4rem;
+const SAdd = styled.button`
+  cursor: pointer;
+  /* background: var(--amazonBG); */
+  background: transparent;
+  color: var(--dsecond);
+  border: 2px solid var(--amazonBG);
+  border-radius: 0.8rem;
+  padding: 0 2rem;
+  z-index: 2;
+  height: 4rem;
 
-//   &:hover {
-//     background: white;
-//     color: black;
-//     border: solid 2px black;
-//   }
-// `;
+  &:hover {
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.3);
+    border: 2px solid var(--amazonHL);
+  }
+`;

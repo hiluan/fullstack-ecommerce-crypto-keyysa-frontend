@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>keyysa | shop with privacy!</title>
-        <meta name="description" content="shop with privacy!" />
+        <title>keyysa | shopping with privacy</title>
+        <meta name="description" content="shopping with privacy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

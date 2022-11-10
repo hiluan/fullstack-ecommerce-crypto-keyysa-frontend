@@ -17,17 +17,21 @@ body {
   font-weight: 100;
   font-family: "Roboto", sans-serif;
 
+  /* * Both Modes * */
+  --amazonBG: rgba(37, 46, 61, 255);
+  --amazonHL: #2596be;
+
   /* * Text - Dark Mode * */
-  --dtextfirst: rgba(255, 255, 255, 1);
-  --dtextsecond: rgba(255, 255, 255, 0.8);
-  --dtextthird: rgba(255, 255, 255, 0.6);
-  --dtextlast: rgba(255, 255, 255, 0.4);
+  --dfirst: rgba(255, 255, 255, 1);
+  --dsecond: rgba(255, 255, 255, 0.8);
+  --dthird: rgba(255, 255, 255, 0.6);
+  --dlast: rgba(255, 255, 255, 0.4);
 
   /* * Text - Light Mode * */
-  --ltextfirst: rgba(0, 0, 0, 1);
-  --ltextsecond: rgba(0, 0, 0, 0.8);
-  --ltextthird: rgba(0, 0, 0, 0.6);
-  --ltextlast: rgba(0, 0, 0, 0.4);
+  --lfirst: rgba(0, 0, 0, 1);
+  --lsecond: rgba(0, 0, 0, 0.8);
+  --lthird: rgba(0, 0, 0, 0.6);
+  --llast: rgba(0, 0, 0, 0.4);
 
   /* * Monochromatic * */
   --boxshadow01: 0 0 30px rgba(0, 0, 0, 0.1);
@@ -48,18 +52,18 @@ h1 {
 
 h2 {
   font-size: 4rem;
-  color: var(--dtextfirst);
+  color: var(--dfirst);
 }
 
 h3 {
   font-size: 3rem;
-  color: var(--dtextfirst);
+  color: var(--dfirst);
 }
 
 h4 {
   font-size: 2rem;
   font-weight: 500;
-  color: var(--dtextfirst);
+  color: var(--dfirst);
 }
 
 p {
