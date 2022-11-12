@@ -1,18 +1,22 @@
 import styled from "styled-components";
 import Product from "./Product";
 import { useState } from "react";
-// import { AnimateSharedLayout, AnimatePresence } from "framer";
 
-// const {, useScroll, useTransform } = require("framer");
+const { useScroll, useTransform } = require("framer-motion");
+import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 export default function Products({ products }) {
   return (
     <SProducts id="SProducts">
       <SCards id="SCards">
         {products.map((product) => (
-          // <AnimatePresence>
-          <Product key={product.attributes.slug} product={product} />
-          // </AnimatePresence>
+          <AnimatePresence>
+            <Product
+              //
+              key={product.attributes.slug}
+              product={product}
+            />
+          </AnimatePresence>
         ))}
       </SCards>
     </SProducts>

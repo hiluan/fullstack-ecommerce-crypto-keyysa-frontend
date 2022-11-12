@@ -16,28 +16,31 @@ export default function Product({ product }) {
   }, []);
 
   const item = cartItems.filter(
-    (item) => item.handle === product.attributes.handle
+    (item) => item.slug === product.attributes.slug
   )[0];
-  console.log(item);
+  console.log(product.attributes.slug);
 
   return (
     <SProduct className="SProduct">
-      <Link href={`/products/${slug}`}>
+      <Link href={`/${slug}`}>
         <div>
           <img
             className="SProduct-img"
             src={image.data.attributes.formats.small.url}
             alt={title}
           />
+          {/* <div>
+            <h2>${price}</h2>
+          </div> */}
         </div>
       </Link>
-      <SBtnGroup id="product-btngroup">
+      <div className="product-btngroup">
         {item === undefined ? (
           <BtnAddToCart className="" product={product} />
         ) : (
           <BtnQuantity className="" item={item} />
         )}
-      </SBtnGroup>
+      </div>
     </SProduct>
   );
 }
@@ -47,18 +50,21 @@ const SProduct = styled.div`
     width: 240px;
     height: 320px;
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 0.8;
     border-radius: 1rem;
     box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.2);
-    border: 2px solid var(--amazonBG);
+    /* border: 2px solid var(--amazonBG); */
   }
 
   img:hover {
-    opacity: 0.5;
-    transform: scale(1.05);
+    border: none;
+
+    opacity: 1;
+    /* transform: scale(1.05); */
   }
 
   a > div {
+    position: relative;
     border: 2px solid var(--amazonBG);
     border-radius: 1rem;
   }
@@ -67,11 +73,21 @@ const SProduct = styled.div`
     box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.3);
     border: 2px solid var(--amazonHL);
   }
+
+  /* a > div > div {
+    position: absolute;
+    top: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    h2 {
+    }
+  } */
 `;
 
-const SBtnGroup = styled.div`
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  margin-top: 2vh;
-`;
+// const SBtnGroup = styled.div`
+//   z-index: 10;
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 2vh;
+// `;

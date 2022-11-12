@@ -26,6 +26,8 @@ const BtnAddToCart = ({ product }) => {
       onClick={() => {
         notify();
         onAdd(product.attributes, qty);
+        console.log(product.attributes.slug);
+        console.log(qty);
       }}
     >
       Add to Cart
