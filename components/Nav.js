@@ -14,11 +14,13 @@ import {
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Cart from "./Cart";
+import About from "./About";
 const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
   const route = useRouter();
-  const { showCart, setShowCart, totalQty } = useStateContext();
+  const { showAbout, setShowAbout, showCart, setShowCart, totalQty } =
+    useStateContext();
   const [colorChange, setColorchange] = useState(false);
 
   // const changeNavbarColor = () => {
@@ -46,9 +48,10 @@ export default function Nav() {
           <RiHome3Line className="menu-icon" />
         </li>
         <li>
-          <Link href="">
-            <RiInformationLine className="menu-icon" />
-          </Link>
+          <RiInformationLine
+            className="menu-icon"
+            onClick={() => setShowAbout(true)}
+          />
         </li>
         <li>
           <RiUser5Line />
@@ -69,6 +72,7 @@ export default function Nav() {
         </li>
       </SMenu>
 
+      <AnimatePresence>{showAbout && <About />}</AnimatePresence>
       <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </SNav>
   );
