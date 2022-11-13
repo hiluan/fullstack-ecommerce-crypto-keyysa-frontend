@@ -42,63 +42,64 @@ export default function ProductDetails() {
     (item) => item.slug === product.attributes.slug
   )[0];
 
+  const regex = description.split(". ").map((des) => <li>{des}.</li>);
+  // const regex = description.replace(". ", ".\n");
+
   return (
-    // <SWrapper>
-    //   <motion.div
-    //     initial={{ opacity: 0 }}
-    //     animate={{ opacity: 1 }}
-    //     exit={{ opacity: 0, transition: { duration: 0.15 } }}
-    //     transition={{ duration: 0.2, delay: 0.15 }}
-    //     style={{ pointerEvents: "auto" }}
-    //     className="overlay"
-    //   >
-    //     <Link href={"/"}>
-    //       <div></div>
-    //     </Link>
-    //   </motion.div>
-    <SDetails
-    // className="card-content-container open"
-    >
+    <SWrapper>
       {/* <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        transition={{ duration: 0.2, delay: 0.15 }}
+        style={{ pointerEvents: "auto" }}
+        className="overlay"
+      >
+        <Link href={"/"}>
+          <div></div>
+        </Link>
+      </motion.div> */}
+      <SDetails className="card-content-container open">
+        {/* <motion.div
         className="card-content"
         > */}
-      <div id="sdetails-img">
         <img src={image.data.attributes.formats.medium.url} alt={title} />
-      </div>
-      <SInfo id="sinfo">
-        <h1>{title}</h1>
-        <p>{description}</p>
-
-        {/* <SQuantity>
-          <span>Quantiy</span>
-          <BtnQuantity product={product} />
-        </SQuantity> */}
-
-        <div className="product-btngroup">
-          {item === undefined ? (
-            <BtnAddToCart className="" product={product} />
-          ) : (
-            <BtnQuantity className="" item={item} />
-          )}
-        </div>
-      </SInfo>
-      {/* </motion.div> */}
-    </SDetails>
-    // </SWrapper>
+        <SInfo>
+          <h3>{title}</h3>
+          <div>
+            <p> About this item</p>
+            <ul>{regex}</ul>
+          </div>
+          <div className="product-btngroup">
+            {item === undefined ? (
+              <BtnAddToCart className="" product={product} />
+            ) : (
+              <BtnQuantity className="" item={item} />
+            )}
+          </div>
+        </SInfo>
+        {/* </motion.div> */}
+      </SDetails>
+    </SWrapper>
   );
 }
 
 const SDetails = styled.div`
   position: relative;
+  top: 10vh;
+  max-width: 768px;
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
 
-  #sdetails-img {
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    margin-left: 30%;
-    height: 90%;
+  img {
+    margin-right: 5rem;
+    width: 360px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.2);
+    padding: 1rem;
+    border: 2px solid var(--amazonHL);
   }
 `;
 
@@ -106,87 +107,26 @@ const SWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
   z-index: 100;
   display: flex;
   justify-content: flex-end;
 `;
 
 const SInfo = styled.div`
-  width: 40%;
-  margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  justiify-content: center;
-  align-items: center;
-
-  background: transparent;
   z-index: 2;
-
-  h1 {
-    text-align: center;
-    margin: 2rem 0;
-    text-shadow: 0px 0px 10px #000000;
+  h3 {
+    margin: 1rem 0 2rem 0;
+    font-weight: 500;
   }
-
-  p {
-    margin: 2rem 0;
-    text-shadow: 0px 0px 10px #000000;
-  }
-
-  > button {
-    margin-top: 3rem;
-    width: 40%;
-  }
-`;
-
-const SQuantity = styled.div`
-  display: flex;
-  align-items: center;
-  color: white;
-
-  button {
-    background: transparent;
-    border: none;
-    display: flex;
-
-    font-size: 3rem;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  span {
-    font-size: 2rem;
-    text-align: left;
-    margin-right: 2rem;
-  }
-
-  p {
-    font-size: 2.5rem;
-    color: white;
-    opacity: 0.9;
-    margin: 0 0.5rem;
-    padding-bottom: 0.5rem;
-    z-index: 2;
-    width: 3rem;
-    text-align: center;
-    filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
-  }
-
-  svg {
-    color: white;
-    transition: all ease 0.3s;
-    border-radius: 50%;
-    font-size: 3rem;
-    margin: 0.5rem 0;
-
-    &:hover {
-      background: white;
-      color: black;
-      // box-shadow: var(--boxshadow10);
-      filter: drop-shadow(0 0 6px rgb(255 255 255 / 1));
+  ul {
+    margin-left: 1rem;
+    list-style: outside;
+    font-size: 1.4rem;
+    li {
+      margin-top: 1.6rem;
     }
   }
 `;

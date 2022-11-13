@@ -3,18 +3,8 @@ import { useRef, useState } from "react";
 // const { motion, useScroll, useTransform } = require("framer-motion");
 
 export default function Intro({ products }) {
-  let ref = useRef(null);
-  // let { scrollYProgress } = useScroll({
-  //   target: ref,
-  //   offset: ["start start", "end start"],
-  // });
-  // let y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
-  // let { scrollY } = useScroll();
-  // let y = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
-
   return (
-    <SIntro ref={ref} id="sIntro">
+    <SIntro id="sIntro">
       <STopText id="STopText" className="absolute">
         <h1>We go public </h1>
         <h1>
@@ -25,21 +15,13 @@ export default function Intro({ products }) {
           harvesting.
         </p>
       </STopText>
-      {/*
-      <SCards id="SCards">
-        {lights.map((light) => (
-          <Light key={light.attributes.handle} light={light} />
-        ))}
-      </SCards> */}
 
-      {/* {is16 && <PopUp16 is16={is16} setIs16={setIs16} />} */}
-
-      <SGradientAni></SGradientAni>
+      {/* <SGradientAni></SGradientAni> */}
 
       {/* <sVideo style={{ y }} id="sVideo" autoPlay loop muted> */}
-      <Video id="sVideo" autoPlay loop muted>
+      {/* <Video id="sVideo" autoPlay loop muted>
         <source src={"/keyysa-intro-vid.mp4"} type="video/mp4" />
-      </Video>
+      </Video> */}
     </SIntro>
   );
 }

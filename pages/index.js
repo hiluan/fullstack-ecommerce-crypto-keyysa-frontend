@@ -13,24 +13,18 @@ export default function Home() {
   if (error) return <p>{error.message}</p>;
 
   const products = data.products.data;
-  console.log(products);
 
   return (
     <div>
       <Head>
-        <title>keyysa | shopping with privacy</title>
-        <meta name="description" content="shopping with privacy" />
+        <title>keyysa | shopping with anonymity</title>
+        <meta name="description" content="shopping with anonymity" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <Intro products={products} />
         <Products products={products} />
-
-        {/* <IntroTop products={products} />
-        <IntroBeerCards products={products} />
-        <IntroMid products={products} />
-        <IntroBottom /> */}
       </main>
     </div>
   );

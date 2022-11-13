@@ -41,6 +41,8 @@ export default function Product({ product }) {
           <BtnQuantity className="" item={item} />
         )}
       </div>
+
+      {/* <AnimatePresence>{showProduct && <ProductDetails />}</AnimatePresence> */}
     </SProduct>
   );
 }
@@ -58,7 +60,6 @@ const SProduct = styled.div`
 
   img:hover {
     border: none;
-
     opacity: 1;
     /* transform: scale(1.05); */
   }
