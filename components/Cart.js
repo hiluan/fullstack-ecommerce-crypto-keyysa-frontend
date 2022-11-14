@@ -53,19 +53,18 @@ export default function Cart() {
     }
   }
 
-  // payment w stripe
+  // check out with btcpay server
   const slugCheckout = async () => {
-    //   const stripe = await getStripe();
-    //   const response = await fetch("/api/stripe", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(cartItems),
-    //   });
-    //   const data = await response.json();
-    //   await stripe.redirectToCheckout({ sessionId: data.id });
+    // const stripe = await getStripe();
+    // const response = await fetch("/api/stripe", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(cartItems),
+    // });
+    // const data = await response.json();
+    // await stripe.redirectToCheckout({ sessionId: data.id });
   };
 
-  // console.log(cartItems);
   return (
     <CartWrapper
       animate={{ opacity: 1 }}
@@ -195,6 +194,7 @@ const CartItem = styled(motion.div)`
   img {
     max-height: 16rem;
     margin: 0 10% 0 5%;
+    border-radius: 0.5rem;
   }
 `;
 

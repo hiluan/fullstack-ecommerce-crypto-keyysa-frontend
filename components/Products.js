@@ -10,12 +10,8 @@ export default function Products({ products }) {
     <SProducts id="SProducts">
       <SCards id="SCards">
         {products.map((product) => (
-          <AnimatePresence>
-            <Product
-              //
-              key={product.attributes.slug}
-              product={product}
-            />
+          <AnimatePresence key={product.id}>
+            <Product product={product} />
           </AnimatePresence>
         ))}
       </SCards>

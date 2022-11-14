@@ -5,11 +5,22 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import BtnAddToCart from "./_btnAddToCart";
 import BtnQuantity from "./_btnQuantity";
+import ProductDetails from "./ProductDetails";
+const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Product({ product }) {
   const { title, price, image, slug } = product.attributes;
-  const { cartItems, qty, setQty, increaseQty, decreaseQty, onAdd, onRemove } =
-    useStateContext();
+  const {
+    showProductDetails,
+    setShowProductDetails,
+    cartItems,
+    qty,
+    setQty,
+    increaseQty,
+    decreaseQty,
+    onAdd,
+    onRemove,
+  } = useStateContext();
 
   useEffect(() => {
     setQty(1);
@@ -18,22 +29,24 @@ export default function Product({ product }) {
   const item = cartItems.filter(
     (item) => item.slug === product.attributes.slug
   )[0];
-  console.log(product.attributes.slug);
 
   return (
     <SProduct className="SProduct">
-      <Link href={`/${slug}`}>
-        <div>
-          <img
-            className="SProduct-img"
-            src={image.data.attributes.formats.small.url}
-            alt={title}
-          />
-          {/* <div>
+      {/* <Link href={`/${slug}`}> */}
+      <div
+        className="product-details-group"
+        onClick={() => setShowProductDetails(true)}
+      >
+        <img
+          className="SProduct-img"
+          src={image.data.attributes.formats.small.url}
+          alt={title}
+        />
+        {/* <div>
             <h2>${price}</h2>
           </div> */}
-        </div>
-      </Link>
+      </div>
+      {/* </Link> */}
       <div className="product-btngroup">
         {item === undefined ? (
           <BtnAddToCart className="" product={product} />
@@ -42,7 +55,9 @@ export default function Product({ product }) {
         )}
       </div>
 
-      {/* <AnimatePresence>{showProduct && <ProductDetails />}</AnimatePresence> */}
+      <AnimatePresence>
+        {showProductDetails && <ProductDetails product={product} />}
+      </AnimatePresence>
     </SProduct>
   );
 }
@@ -61,16 +76,17 @@ const SProduct = styled.div`
   img:hover {
     border: none;
     opacity: 1;
-    /* transform: scale(1.05); */
+    transform: scale(1.05);
   }
 
-  a > div {
+  .product-details-group {
+    cursor: pointer;
     position: relative;
     border: 2px solid var(--amazonBG);
     border-radius: 1rem;
   }
 
-  a > div:hover {
+  .product-details-group:hover {
     box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.3);
     border: 2px solid var(--amazonHL);
   }

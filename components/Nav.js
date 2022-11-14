@@ -44,9 +44,9 @@ export default function Nav() {
         </Link>
       </SLogo>
       <SMenu id="SMenu">
-        <li onClick={() => route.push("/")}>
+        {/* <li onClick={() => route.push("/")}>
           <RiHome3Line className="menu-icon" />
-        </li>
+        </li> */}
         <li>
           <RiInformationLine
             className="menu-icon"
@@ -116,14 +116,13 @@ const SLogo = styled.div`
 const SMenu = styled.ul`
   display: flex;
   list-style: none;
-  font-size: 3rem;
   cursor: pointer;
 
   li {
     margin: 0 3rem;
     text-align: center;
     color: var(--dthird);
-    /* text-shadow: 0 0 3px #fff; */
+    font-size: 3rem;
   }
 
   li:hover {

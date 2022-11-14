@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useStateContext } from "../lib/context";
 import { CgClose } from "react-icons/cg";
+import Link from "next/link";
 
 // animation variants
 
@@ -48,34 +49,68 @@ export default function About() {
         onClick={(e) => e.stopPropagation()}
         id="SAbout"
       >
-        <h1>About keyysa</h1>
-        <h4>Mission</h4>
+        <h2>about keyysa | a decentralized store</h2>
+
+        <h4>Intro</h4>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iure
-          maxime in dolorum ratione minus beatae, odit debitis a accusamus vero,
-          minima, reiciendis iusto nam hic repellat deserunt adipisci quasi.
+          With Crypto, it was unbelievable how we can manage our own currency
+          privately, send our 'money' to each other quickly with almost no
+          transaction fee, and, for some, stay off the grid.
         </p>
-        <h4>Mission</h4>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iure
-          maxime in dolorum ratione minus beatae, odit debitis a accusamus vero,
-          minima, reiciendis iusto nam hic repellat deserunt adipisci quasi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iure
-          maxime in dolorum ratione minus beatae, odit debitis a accusamus vero,
-          minima, reiciendis iusto nam hic repellat deserunt adipisci quasi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iure
-          maxime in dolorum ratione minus beatae, odit debitis a accusamus vero,
-          minima, reiciendis iusto nam hic repellat deserunt adipisci quasi.
+          Now, with keyysa, we can use cryptos to shop online without being
+          watched, and without getting our data harvested by online retailers.
         </p>
-        <h4>Mission</h4>
+
+        <h4>Mission & Core Principles</h4>
+        <ul>
+          <li>
+            For the exposure of Bitcoin and for Cryptocurrency in general:
+            Without involving fiats, you can use your coins to buy what you want
+            directly and frequently.
+          </li>
+          <li>
+            Not a snitch: keyysa has no KYC bullshit. You stay completely
+            anonymous and no one will ever know this is you buying these items
+            with your crypto.
+          </li>
+          <li>
+            Make no money on your privacy: keyysa uses no tracking tools, no
+            data mining, no cookies, and no annoying newsletter subscribing.
+            keyysa makes sure no one can take advantage of your data.
+          </li>
+        </ul>
+
+        <h4>What does that even mean?</h4>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iure
-          maxime in dolorum ratione minus beatae, odit debitis a accusamus vero,
-          minima, reiciendis iusto nam hic repellat deserunt adipisci quasi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iure
-          maxime in dolorum ratione minus beatae, odit debitis a accusamus vero,
-          minima, reiciendis iusto nam hic repellat deserunt adipisci quasi.
+          That means, you come in, buy your stuff with your coins, I deliver,
+          and that’s it. No one will ever know who spent these coins to get this
+          or that. I go public for you to stay private.
         </p>
+        <p>
+          And if I make you happy, then tell your friends about it (Yes,
+          please!).
+        </p>
+        <p>
+          I hope this is worth to work on. Do you have questions, advice, or
+          suggestions? I’m all ears and I appreciate it.
+        </p>
+
+        <h4>Handling payments</h4>
+        <p>
+          We use BTCPay Server and Lightning Network to handle transaction
+          between us.
+        </p>
+        <p>
+          More about{" "}
+          <Link href="https://btcpayserver.org/#watchVideo">BTCPay Server</Link>{" "}
+          and{" "}
+          <Link href="https://docs.btcpayserver.org/LightningNetwork/">
+            Lightning Network
+          </Link>
+          .
+        </p>
+
         {/* {showAbout && (
           <CgClose id="close-cart-mobile" onClick={() => setShowAbout(false)} />
         )} */}
@@ -116,15 +151,28 @@ const SAbout = styled(motion.div)`
     rgba(34, 34, 34, 1) 100%
   ); */
 
-  background: radial-gradient(
-      ellipse at top,
-      rgba(10, 10, 10, 1),
-      rgba(30, 30, 30, 1)
-    ),
-    radial-gradient(ellipse at bottom, rgba(20, 20, 20, 1), rgba(30, 30, 30, 1));
+  background: radial-gradient(ellipse at top, #100000, #000000, #1c0306),
+    radial-gradient(ellipse at bottom, #02051c, #1c0902, #031208);
   z-index: 11;
 
-  > svg {
-    display: none;
+  h2 {
+    font-weight: 300;
+  }
+  h4 {
+    margin: 2rem 0 0 0;
+  }
+
+  li {
+    margin: 1.5rem 0;
+  }
+  p {
+    margin: 1.5rem 0;
+  }
+  a {
+    color: var(--amazonHL);
+  }
+
+  a:hover {
+    color: var(--amazonBG);
   }
 `;

@@ -9,9 +9,23 @@ const BtnQuantity = ({ item }) => {
   const { qty, onAdd, onRemove } = useStateContext();
 
   // create a toast
-  const notify = () => {
-    toast(`${qty} x "${item.title}" zum Warenkorb hinzugefügt.`, {
-      icon: "🍺",
+  const notifyRemove = () => {
+    toast(`${qty} x "${item.title}" was removed from cart.`, {
+      icon: "👎",
+      duration: 2000,
+      style: {
+        fontSize: "1.4rem",
+        borderRadius: "3px",
+        background: "#111111",
+        color: "#fff",
+        maxWidth: "480px",
+      },
+    });
+  };
+
+  const notifyAdd = () => {
+    toast(`${qty} x "${item.title}" was added to cart`, {
+      icon: "👍",
       duration: 2000,
       style: {
         fontSize: "1.4rem",
@@ -26,13 +40,18 @@ const BtnQuantity = ({ item }) => {
   return (
     <SQuantity>
       {/* <span>Quantity</span> */}
-      <button onClick={() => onRemove(item)}>
+      <button
+        onClick={() => {
+          notifyRemove();
+          onRemove(item);
+        }}
+      >
         <ImMinus />
       </button>
       <p>{item.quantity}</p>
       <button
         onClick={() => {
-          notify();
+          notifyAdd();
           onAdd(item, 1);
         }}
       >
