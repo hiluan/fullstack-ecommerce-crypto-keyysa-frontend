@@ -63,9 +63,11 @@ export default function Product({ product }) {
 }
 
 const SProduct = styled.div`
-  img {
-    width: 240px;
-    height: 320px;
+  .SProduct-img {
+    /* width: 24rem; */
+    /* height: 32rem; */
+    width: 100%;
+    height: 32rem;
     object-fit: cover;
     opacity: 0.8;
     border-radius: 1rem;
@@ -73,7 +75,7 @@ const SProduct = styled.div`
     /* border: 2px solid var(--amazonBG); */
   }
 
-  img:hover {
+  .SProduct-img:hover {
     border: none;
     opacity: 1;
     transform: scale(1.05);

@@ -1,0 +1,11 @@
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  #STopText {
+    width: 62%;
+  }
+  #STopText h1 {
+    font-size: 4.5rem;
+  }
+
+  .SProduct-img {
+  }
+}

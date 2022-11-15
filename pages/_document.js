@@ -10,6 +10,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Qwitcher+Grypen:wght@700&family=Roboto+Slab:wght@300&family=Roboto:wght@300;500;700;900&family=Yesteryear&display=swap"
           rel="stylesheet"
         />
+        {/* <meta content="width=device-width, initial-scale=1" name="viewport" /> */}
       </Head>
       <body>
         <Main />

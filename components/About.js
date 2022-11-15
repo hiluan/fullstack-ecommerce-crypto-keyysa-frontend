@@ -111,9 +111,7 @@ export default function About() {
           .
         </p>
 
-        {/* {showAbout && (
-          <CgClose id="close-cart-mobile" onClick={() => setShowAbout(false)} />
-        )} */}
+        {/* <CgClose id="close-about-mobile" onClick={() => setShowAbout(false)} /> */}
       </SAbout>
     </AboutWrapper>
   );
@@ -143,7 +141,6 @@ const SAbout = styled(motion.div)`
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: 2rem;
-  opacity: 0.95;
   margin: 0 auto;
   /* background: linear-gradient(
     90deg,
@@ -153,6 +150,7 @@ const SAbout = styled(motion.div)`
 
   background: radial-gradient(ellipse at top, #100000, #000000, #1c0306),
     radial-gradient(ellipse at bottom, #02051c, #1c0902, #031208);
+  opacity: 0.95;
   z-index: 11;
 
   h2 {

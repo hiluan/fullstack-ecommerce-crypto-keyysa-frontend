@@ -36,7 +36,7 @@ export default function Nav() {
   // }
 
   return (
-    <SNav>
+    <SNav id="SNav">
       {colorChange && <SNavBG id="SNavBG"></SNavBG>}
       <SLogo id="SLogo">
         <Link href={"/"}>
@@ -44,9 +44,9 @@ export default function Nav() {
         </Link>
       </SLogo>
       <SMenu id="SMenu">
-        {/* <li onClick={() => route.push("/")}>
+        <li onClick={() => route.push("/")}>
           <RiHome3Line className="menu-icon" />
-        </li> */}
+        </li>
         <li>
           <RiInformationLine
             className="menu-icon"

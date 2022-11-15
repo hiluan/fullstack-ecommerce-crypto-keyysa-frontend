@@ -122,15 +122,9 @@ const SProductDetails = styled(motion.div)`
   border-radius: 2rem 2rem 0 0;
   margin: 0 auto;
 
-  background: radial-gradient(
-      ellipse at top,
-
-      #100000,
-      #1c0306,
-      #000000
-    ),
+  background: radial-gradient(ellipse at top, #100000, #000000, #1c0306),
     radial-gradient(ellipse at bottom, #02051c, #1c0902, #031208);
-  opacity: 0.9;
+  opacity: 0.6;
   z-index: 11;
 
   h3 {

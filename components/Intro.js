@@ -43,7 +43,7 @@ const STopText = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 42%;
   height: 50vh;
 
   h1 {
@@ -51,7 +51,8 @@ const STopText = styled.div`
     color: white;
   }
   span {
-    font-size: 3rem;
+    opacity: 0.5;
+    /* font-size: 3rem; */
   }
 `;
 const SGradientAni = styled.div`

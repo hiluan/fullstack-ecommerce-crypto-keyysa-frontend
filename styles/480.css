@@ -1,0 +1,80 @@
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 3rem !important;
+  }
+  h3 {
+    font-size: 2.4rem !important;
+  }
+
+  /* same with 768 */
+  #SLogo {
+    position: fixed;
+    top: 4vh;
+    left: 5%;
+  }
+
+  #SMenu {
+    position: fixed;
+    bottom: 0;
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+    background: black;
+    opacity: 0.98;
+    width: 100%;
+    z-index: 999;
+  }
+
+  #SAbout {
+    height: 80vh;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 3rem;
+  }
+
+  .SProductDetails {
+    top: 15vh !important;
+    height: 85vh !important;
+    padding: 3rem !important;
+  }
+
+  #SCart {
+    width: 100%;
+    opacity: 0.95;
+    height: 85vh;
+    top: 10vh;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0;
+  }
+
+  #cart-img {
+    max-height: 12rem;
+
+    margin: 0;
+    border-radius: 0.5rem;
+  }
+  /* /////////////////////////// */
+  #STopText {
+    width: 90%;
+  }
+  #STopText h1 {
+    font-size: 3rem;
+  }
+
+  #SCards {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-gap: 0.5rem;
+    width: 98%;
+  }
+  .product-details-group {
+    /* min-width: 90px !important; */
+    /* min-height: 140px !important; */
+  }
+  .SProduct-img {
+    /* width: 100% !important;
+    height: 140px !important; */
+    height: 20rem !important;
+
+    /* min-width: 105px !important; */
+    /* min-height: 140px !important; */
+  }
+}

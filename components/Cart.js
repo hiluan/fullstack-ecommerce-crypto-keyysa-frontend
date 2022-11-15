@@ -33,7 +33,7 @@ export default function Cart() {
   }, []);
 
   // mobile has different animation style
-  const isMobile = window.innerWidth < 768; //Add the width you want to check for here (now 768px)
+  const isMobile = window.innerWidth <= 768; //Add the width you want to check for here (now 768px)
   let mobileVariant = {};
   if (!isMobile) {
     {
@@ -105,6 +105,7 @@ export default function Cart() {
                 <img
                   src={item.image.data.attributes.formats.thumbnail.url}
                   alt={item.title}
+                  id="cart-img"
                 />
                 <CardInfo>
                   <p className="bold">{item.title}</p>
