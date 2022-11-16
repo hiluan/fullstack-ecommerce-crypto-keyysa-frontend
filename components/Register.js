@@ -1,6 +1,6 @@
-//github.com/tpiros/jamstack-training-films-ui/blob/main/components/Nav.js
+// https://github.com/tpiros/jamstack-training-films-ui/blob/main/components/Nav.js
 
-https: import { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { setToken } from "../lib/auth";
 import { fetcher } from "../lib/api";
