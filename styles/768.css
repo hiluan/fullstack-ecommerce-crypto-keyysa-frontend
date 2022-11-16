@@ -22,12 +22,15 @@
   #SMenu {
     position: fixed;
     bottom: 0 !important;
+    padding: 0 15rem;
     padding-top: 2vh;
     padding-bottom: 3vh;
     background: black;
     opacity: 0.98;
     width: 100%;
     z-index: 999;
+    display: flex;
+    justify-content: space-around;
   }
 
   #SAbout {
@@ -45,11 +48,17 @@
   #SCart {
     width: 75%;
     opacity: 0.95;
-    height: 85vh;
+    height: 72vh;
     top: 20vh;
     margin: 0 auto;
     border-top-right-radius: 2rem;
     border-bottom-left-radius: 0;
+
+    background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(35, 35, 35, 1) 100%
+    );
   }
 
   #cart-img {

@@ -70,9 +70,9 @@ export default function About() {
             directly and frequently.
           </li>
           <li>
-            Not a snitch: keyysa has no KYC bullshit. You stay completely
-            anonymous and no one will ever know this is you buying these items
-            with your crypto.
+            Not a snitch: keyysa has no KYC. You stay completely anonymous and
+            no one will ever know this is you buying these items with your
+            crypto.
           </li>
           <li>
             Make no money on your privacy: keyysa uses no tracking tools, no

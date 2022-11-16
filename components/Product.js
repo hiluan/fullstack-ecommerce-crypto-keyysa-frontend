@@ -13,6 +13,8 @@ export default function Product({ product }) {
   const {
     showProductDetails,
     setShowProductDetails,
+    setShowAbout,
+    setShowCart,
     cartItems,
     qty,
     setQty,
@@ -35,7 +37,11 @@ export default function Product({ product }) {
       {/* <Link href={`/${slug}`}> */}
       <div
         className="product-details-group"
-        onClick={() => setShowProductDetails(true)}
+        onClick={() => {
+          setShowProductDetails(true);
+          setShowAbout(false);
+          setShowCart(false);
+        }}
       >
         <img
           className="SProduct-img"

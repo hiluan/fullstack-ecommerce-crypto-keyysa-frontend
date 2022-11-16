@@ -19,8 +19,14 @@ const { motion, AnimatePresence } = require("framer-motion");
 
 export default function Nav() {
   const route = useRouter();
-  const { showAbout, setShowAbout, showCart, setShowCart, totalQty } =
-    useStateContext();
+  const {
+    showAbout,
+    setShowAbout,
+    showCart,
+    setShowCart,
+    setShowProductDetails,
+    totalQty,
+  } = useStateContext();
   const [colorChange, setColorchange] = useState(false);
 
   // const changeNavbarColor = () => {
@@ -44,13 +50,25 @@ export default function Nav() {
         </Link>
       </SLogo>
       <SMenu id="SMenu">
-        <li onClick={() => route.push("/")}>
-          <RiHome3Line className="menu-icon" />
+        <li>
+          <RiHome3Line
+            onClick={() => {
+              setShowAbout(false);
+              setShowCart(false);
+              setShowProductDetails(false);
+              route.push("/");
+            }}
+            className="menu-icon"
+          />
         </li>
         <li>
           <RiInformationLine
             className="menu-icon"
-            onClick={() => setShowAbout(true)}
+            onClick={() => {
+              setShowAbout(true);
+              setShowCart(false);
+              setShowProductDetails(false);
+            }}
           />
         </li>
         <li>
@@ -67,7 +85,13 @@ export default function Nav() {
                 {totalQty}
               </motion.span>
             )}
-            <RiShoppingBagLine onClick={() => setShowCart(true)} />
+            <RiShoppingBagLine
+              onClick={() => {
+                setShowCart(true);
+                setShowAbout(false);
+                setShowProductDetails(false);
+              }}
+            />
           </SCartTotal>
         </li>
       </SMenu>
