@@ -23,7 +23,7 @@ const cards = {
   },
 };
 
-export default function Cart() {
+export default function UserLogin() {
   const { cartItems, showCart, setShowCart, setQty, totalPrice } =
     useStateContext();
 

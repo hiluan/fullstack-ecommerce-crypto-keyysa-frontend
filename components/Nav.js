@@ -1,3 +1,6 @@
+// FOR CREATING USER ACCOUNT
+// https://github.com/tpiros/jamstack-training-films-ui/blob/main/components/Nav.js
+
 import styled from "styled-components";
 import Link from "next/link";
 import { useStateContext } from "../lib/context";
@@ -96,6 +99,8 @@ export default function Nav() {
         </li>
       </SMenu>
 
+      {/* <AnimatePresence>{showUser &&  && <About />}</AnimatePresence> */}
+
       <AnimatePresence>{showAbout && <About />}</AnimatePresence>
       <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </SNav>
@@ -140,7 +145,6 @@ const SLogo = styled.div`
 const SMenu = styled.ul`
   display: flex;
   list-style: none;
-  cursor: pointer;
 
   li {
     margin: 0 3rem;
@@ -153,6 +157,10 @@ const SMenu = styled.ul`
     box-shadow: 0px 0px 30px 5px rgba(0, 0, 255, 0.4);
     text-shadow: 0px 0px 30px rgba(0, 0, 255, 0.8);
     color: var(--amazonHL);
+  }
+
+  svg {
+    cursor: pointer;
   }
 `;
 
